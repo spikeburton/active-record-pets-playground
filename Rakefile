@@ -17,4 +17,11 @@ namespace :db do
   task :seed do
     require_relative 'db/seeds.rb'
   end
+
+  desc 'drop the table, recreate it and seed the data'
+  task :all => :db_env do
+    Cat.drop_table
+    Cat.create_table
+    require_relative 'db/seeds.rb'
+  end
 end
