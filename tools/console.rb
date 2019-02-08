@@ -4,4 +4,3 @@ class Cat < ActiveRecord::Base
 end
 
 Pry.start
-# binding.pry
